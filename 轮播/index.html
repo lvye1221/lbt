@@ -82,10 +82,28 @@
 			
 			// 2. 改变 ul 的样式
 			// oUl.style.top = "-600px";
-			startMove(oUl, "top", -300);
+			// startMove(oUl, "top", -300);
 			
-			// 定时切换
+			// 定义一个变量，用于存储当前图片的位置，初始值是-300
+			var ddd = -300;
 			
+			// 3. 定时切换
+			// 创建定时器， 1000 单位毫秒，代表1s
+			setInterval(function(){
+				
+				// 每隔1s执行这里的代码
+				//   数值： -300， -600， -900， ... 
+				startMove(oUl, "top", ddd);
+				
+				// 改变的图片的位置
+				ddd = ddd - 300;
+				
+				// 如果位置 小于 -600 的话，那么位置改成 0
+				if (ddd < -600) {
+					ddd = 0;
+				}
+				
+			}, 3000);
 			
 		</script>
 	</body>
