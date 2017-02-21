@@ -70,6 +70,8 @@
 			
 		</div>
 		
+		<!-- 包含动画库，这是注释不需要写 -->
+		<script type="text/javascript" src="js/move.js" ></script>
 		
 		<script>
 			// js 程序来写，可以控制页面中节点的样式
@@ -79,7 +81,11 @@
 			var oUl = document.getElementById("list");
 			
 			// 2. 改变 ul 的样式
-			oUl.style.top = "-600px";
+			// oUl.style.top = "-600px";
+			startMove(oUl, "top", -300);
+			
+			// 定时切换
+			
 			
 		</script>
 	</body>
