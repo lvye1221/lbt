@@ -22,6 +22,7 @@
 				
 				/*设置绝对定位*/
 				/*默认是： 父级节点中，第一个设置了position属性的那个作为参照物*/
+				
 				position: absolute;
 				left: 0;
 				top: 0;
@@ -70,6 +71,16 @@
 		</div>
 		
 		
-		<script></script>
+		<script>
+			// js 程序来写，可以控制页面中节点的样式
+			
+			
+			// 1. 得到 ul 节点
+			var oUl = document.getElementById("list");
+			
+			// 2. 改变 ul 的样式
+			oUl.style.top = "-600px";
+			
+		</script>
 	</body>
 </html>
