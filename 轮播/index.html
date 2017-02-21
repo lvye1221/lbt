@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		
+		<title></title>
+		
+		<style>
+			
+			/*所有的节点*/
+			* {
+				/*外边距和内边距都为0*/
+				margin: 0; 
+				padding: 0;
+			}
+			
+			
+		
+			/*去掉 ul前面的小黑点*/
+			ul {
+				list-style-type: none;
+			}
+			
+			img {
+				/* 宽度*/
+				width: 600px;  
+ 				
+ 				/*高度*/
+ 				height: 300px;
+			}
+			
+			#cc {
+				/* 设置居中*/
+				margin: 0 auto;
+				width: 600px;
+				height: 300px; 
+				
+				/*设置超出容器的部分隐藏，看不见*/
+				overflow: hidden;
+			}
+		</style>
+		
+	</head>
+	<body>
+		
+		div 是一个容器，用于存储图片的
+		id="cc" 就是容器的名字
+		
+		src 表示图片的路径
+		
+		
+		<div id="cc">
+			
+			<ul>
+				<li> <img src="img/1.jpg" > </li>
+				<li> <img src="img/2.jpg" > </li>
+				<li> <img src="img/3.jpg" > </li>
+			</ul>
+			
+		</div>
+		
+		
+	</body>
+</html>
