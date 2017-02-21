@@ -12,6 +12,9 @@
 				/*外边距和内边距都为0*/
 				margin: 0; 
 				padding: 0;
+				
+				/* 设置文档字体大小为0， 解决图片间隙的问题 */
+				font-size: 0;
 			}
 			
 			
@@ -54,15 +57,20 @@
 	</head>
 	<body>
 		
-		div 是一个容器，用于存储图片的
+		<!--div 是一个容器，用于存储图片的
 		id="cc" 就是容器的名字
 		
-		src 表示图片的路径
+		src 表示图片的路径-->
 		
 		
 		<div id="cc">
 			
 			<ul id="list">
+				<li> <img src="img/1.jpg" > </li>
+				<li> <img src="img/2.jpg" > </li>
+				<li> <img src="img/3.jpg" > </li>
+				
+				<!-- 补充空白位置 -->
 				<li> <img src="img/1.jpg" > </li>
 				<li> <img src="img/2.jpg" > </li>
 				<li> <img src="img/3.jpg" > </li>
@@ -93,17 +101,29 @@
 				
 				// 每隔1s执行这里的代码
 				//   数值： -300， -600， -900， ... 
-				startMove(oUl, "top", ddd);
+				//  动画
+				startMove(oUl, "top", ddd, function() {
+					// 这里是动画完成了！
+					
+					// 如果位置 小于 -900 的话，说明当前已经到达第4张图片，那么位置，瞬间改成 0
+					if (ddd < -900) {
+						
+						// 下一次应该是到 -300的位置
+						ddd = -300;
+						
+						oUl.style.top = 0;
+					}
+				});
 				
 				// 改变的图片的位置
 				ddd = ddd - 300;
 				
-				// 如果位置 小于 -600 的话，那么位置改成 0
-				if (ddd < -600) {
-					ddd = 0;
-				}
 				
 			}, 3000);
+			
+			// 1:   0 --> -300       越来越小！
+			// 2：    -300 --> -600  越来越小！
+			// 3:  -600 -->  0        越来越大！
 			
 		</script>
 	</body>
